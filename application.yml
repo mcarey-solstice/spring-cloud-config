@@ -6,6 +6,9 @@ services:
 ---
 spring:
   profile: docker
+  cloud:
+    config:
+      uri: http://config-server:8888
 
 eureka:
   client:
