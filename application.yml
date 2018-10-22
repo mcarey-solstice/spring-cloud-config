@@ -2,3 +2,12 @@
 services:
   config:
     version: "0.0.2"
+
+---
+spring:
+  profile: docker
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka
