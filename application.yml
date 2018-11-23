@@ -1,11 +1,11 @@
 ---
 services:
   config:
-    version: "0.0.2"
+    version: "0.0.3"
 
 ---
 spring:
-  profile: docker
+  profile: docker-compose
   cloud:
     config:
       uri: http://config-server:8888
@@ -14,3 +14,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://service-registry:8761/eureka
+
+---
+spring:
+  profile: pks
+  cloud:
+    config:
+      uri: http://config-server.api-store.svc.cluster.local:8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry.api-store.svc.cluster.local:8761/eureka
+
