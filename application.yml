@@ -3,6 +3,9 @@ services:
   config:
     version: "0.0.3"
 
+version: 0.0.1
+message: "Hello from config"
+
 ---
 spring:
   profile: docker-compose
